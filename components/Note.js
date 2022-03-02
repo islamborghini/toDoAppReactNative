@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text,Image, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text,Image, StyleSheet,TextInput, TouchableOpacity} from 'react-native';
 
 const Note = (props) =>{
     return(
         <View style={styles.item}>
             <Image style={styles.square} source={require('../assets/pin.png')} ></Image>
-                <Text style={styles.itemText}>{props.text}</Text>
+                <TextInput style={styles.itemText}>{props.text}</TextInput>
         <View style={styles.circular}></View>
         </View>
     )
@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
     },
     itemText:{
         maxWidth:'80%', 
+        height: '100%',
+        width: '100%'
 
     },
     circular:{

@@ -35,7 +35,7 @@ export default function App() {
               {
                 noteItems.map((item, index)=>{
                   return (
-                    <TouchableOpacity key={index} onPress={()=>completeNote(index)}>
+                    <TouchableOpacity key={index}  onPress={()=>completeNote(index)}>
                         <Note key={index} text={item}></Note>
                     </TouchableOpacity>
                   )
