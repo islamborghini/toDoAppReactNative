@@ -6,7 +6,6 @@ const Note = (props) =>{
         <View style={styles.item}>
             <Image style={styles.square} source={require('../assets/pin.png')} ></Image>
                 <TextInput multiline = {true} style={styles.itemText}>{props.text}</TextInput>
-        <View style={styles.circular}></View>
         </View>
     )
 }
@@ -43,7 +42,7 @@ const styles = StyleSheet.create({
     },
     circular:{
         width: 12,
-        height: 12,
+        height: '100%',
         borderColor: "#55BCF6",
         borderWidth: 2,
         borderRadius: 5,

@@ -17,6 +17,10 @@ export default function App() {
     }
   }
 
+  const deletionAlert= ()=>{
+    alert("Long press to delete")
+  }
+
   const completeNote = (index) =>{
     let itemsCopy = [...noteItems];
     itemsCopy.splice(index, 1);
@@ -35,8 +39,11 @@ export default function App() {
               {
                 noteItems.map((item, index)=>{
                   return (
-                    <TouchableOpacity key={index}  onPress={()=>completeNote(index)}>
+                    <TouchableOpacity key={index} 
+                    onPress={()=>deletionAlert()} 
+                    onLongPress={()=>completeNote(index)}>
                         <Note key={index} text={item}></Note>
+                       
                     </TouchableOpacity>
                   )
                 })
