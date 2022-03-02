@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Platform, StyleSheet, Text, View, TextInput, KeyboardAvoidingView,  TouchableOpacity } from 'react-native';
 import Note from './components/Note';
 export default function App() {
+  
   const[note, setNote] = useState();
   const [noteItems, setNoteItems] = useState([]);
 
@@ -20,6 +21,7 @@ export default function App() {
     let itemsCopy = [...noteItems];
     itemsCopy.splice(index, 1);
     setNoteItems(itemsCopy);
+    alert("You deleted the note")
   }
   return (
     <View style={styles.container}>
@@ -63,7 +65,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#E8EAED',
+    backgroundColor: '#121212',
 
   },
   tasksWrapper:{
@@ -74,6 +76,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
+    color: "#FFF"
   },
   items:{
     marginTop: 30,

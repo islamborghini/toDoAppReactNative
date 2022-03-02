@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, Text,Image, StyleSheet, TouchableOpacity} from 'react-native';
 
 const Note = (props) =>{
     return(
         <View style={styles.item}>
-            <View style={styles.itemLeft}>
-                <View style={styles.square}></View>
+            <Image style={styles.square} source={require('../assets/pin.png')} ></Image>
                 <Text style={styles.itemText}>{props.text}</Text>
-            </View>
         <View style={styles.circular}></View>
         </View>
     )
@@ -32,10 +30,9 @@ const styles = StyleSheet.create({
     square:{
         width: 24, 
         height: 24,
-        backgroundColor: "#55BCF6",
         opacity: 0.4,
         borderRadius: 5,
-        marginRight: 15,
+        marginRight: 15
 
     },
     itemText:{
