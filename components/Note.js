@@ -5,7 +5,7 @@ const Note = (props) =>{
     return(
         <View style={styles.item}>
             <Image style={styles.square} source={require('../assets/pin.png')} ></Image>
-                <TextInput style={styles.itemText}>{props.text}</TextInput>
+                <TextInput multiline = {true} style={styles.itemText}>{props.text}</TextInput>
         <View style={styles.circular}></View>
         </View>
     )
