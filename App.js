@@ -5,9 +5,15 @@ export default function App() {
   const[note, setNote] = useState();
   const [noteItems, setNoteItems] = useState([]);
 
-  const handleAddNote = () =>{
+  const handleAddNote = (note) =>{
+    if (note == null) {
+    alert("Note cannot be empty");
+    return;
+    }
+    else{
     setNoteItems([...noteItems, note])
     setNote(null);
+    }
   }
 
   const completeNote = (index) =>{
@@ -43,7 +49,7 @@ export default function App() {
           >
             <TextInput style={styles.input} placeholder={'Write a note'}value = {note} onChangeText={text => setNote(text)}/>
 
-        <TouchableOpacity onPress={()=>handleAddNote()}>
+        <TouchableOpacity onPress={()=>handleAddNote(note)}>
           <View style={styles.addWrapper}>
             <Text style={styles.addText}>+</Text>
           </View>
@@ -66,7 +72,8 @@ const styles = StyleSheet.create({
   },
   sectionTitle:{
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   items:{
     marginTop: 30,
